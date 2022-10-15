@@ -1,0 +1,34 @@
+@model Inkasign.Models.Producto
+
+@{
+    ViewData["Title"] = "Detalles del Producto";
+}
+
+
+    <center><h1>Detalles del Producto Inkasign</h1>
+    <div class="container">
+            <div class="col-sm-4">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="card-img-actions">
+                    <center><img class="img-responsive" width="250" height="300"
+                       src="/images/@Html.DisplayFor(model => model.ImageName)" alt="@Html.DisplayFor(model => model.ImageName)"  /></center>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
+                  <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
+                  <h5 class="card-title">S/. @Html.DisplayFor(model => model.Precio)</h5>
+                  <br>
+                  <h5 class="card-text">Estado:</h5>@Html.DisplayFor(model => model.Status)</h5>
+                </div>
+              </div>
+            </div>
+
+    <div>
+    </center>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos del Producto</a> 
+    <br>
+    <a asp-action="Index"> Volver a la Lista de Productos </a>
+</div>    
+</div>

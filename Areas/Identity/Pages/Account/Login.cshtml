@@ -1,0 +1,75 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+<head>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="bodyLIn">
+<div class="create mt-5">
+
+        <form id="formulario" method="post" class="">
+            
+            <fieldset>
+
+            <h3 class="text-center" >@ViewData["Title"]</h3>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="col-12 mb-3">
+                <label class="form-label" asp-for="Input.Email" >Correo electrónico</label>
+                <input asp-for="Input.Email" class="form-control tamaño" placeholder="Ingresa tu email" />
+                <span asp-validation-for="Input.Email" class="text-danger" ></span>
+            </div>
+            <div class="col-12 mb-3">
+                <label class="form-label" asp-for="Input.Password">Contraseña</label>
+                <input asp-for="Input.Password" class="form-control tamaño" id="password" placeholder="Ingresa tu contraseña"/>
+                
+                <input type="checkbox" onclick="mostrar()" value="Mostrar Contraseña"> Mostrar contraseña                
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            
+
+            </div>
+            <div class="text-center mt-5">
+                <button type="submit" class="btn btn-light" style="background-color:#AB291D; color:white;">Iniciar Sesión</button>
+            </div>
+<br>
+<br>        
+
+           
+            <div class="form-group">
+                <p>
+                    <a id="forgot-password" asp-page="./ForgotPassword" style="color:black;">¿Olvidó su contraseña?</a>
+                </p>
+                <p>
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" style="color:black;">Registrarse como un nuevo usuario</a>
+                </p>
+                <p>
+                    <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" style="color:black;">Reenviar correo de confirmación</a>
+                </p>
+            </div>
+            </fieldset>
+        </form>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+}
+
+<script type="text/javascript">
+    function mostrar(){
+         var tipo = document.getElementById("password");
+
+         if(tipo.type == 'password'){
+            tipo.type = 'text';
+         }else{
+            tipo.type = 'password';
+         }
+    }
+
+</script>
+</body>
+
+
+

@@ -1,0 +1,88 @@
+@model dynamic
+@using System.Collections.Generic
+
+@{
+    ViewData["Title"] = "DETALLE PEDIDO";
+
+    IEnumerable<DetallePedido> detalle = new List<DetallePedido>();
+    detalle = @Model.detalle;
+
+    Pedido pedido = new Pedido();
+    pedido = @Model.pedido;
+
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <section id="hero4" class="d-flex align-items-center justify-content-center" style="height: 18px;">
+<h1>DETALLE DEL PEDIDO</h1>
+
+    </section>
+
+    <p>Usuario: @pedido.UserID</p>    
+    <p>Fecha y hora: @pedido.Pago.PaymentDate.ToString("dd-MM-yyyy HH:mm")</p>
+
+<div class="text-center">
+    <table class="table table-striped " style="font-size: 18px;">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                PRODUCTO
+               
+            </th>
+            <th>
+                CANTIDAD
+            </th>
+            <th>
+                PRECIO UNITARIO
+            </th>
+            <th>
+                PRECIO TOTAL
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (DetallePedido item in Model.detalle) {
+        <tr>
+
+               
+                    <td> 
+                        @item.Producto.Name
+                    </td>
+                
+
+            <td>
+                @item.Cantidad 
+            </td>
+            <td>
+              
+              S/. @item.Precio 
+
+            </td>
+            <td>
+                S/. @(item.Precio * item.Cantidad)
+            </td>
+        
+        </tr>
+
+}
+        <tr>
+            <th colspan="3">Total:</td>
+            <td>S/. @pedido.Total</td>
+            
+        </tr>
+
+
+       
+
+    </tbody>
+</table> 
+
+<div>
+    <a asp-action="DownLoadPedidos" asp-route-id="@pedido.Id" class="btn btn-info" style="font-size: 15px;">DESCARGAR PDF</a>
+</div>
+
+</div>
+<br>
+  <div>
+    <a asp-action="ListarPedidos" class="btn btn-info" style="font-size: 15px;">RETORNAR A LA LISTA</a>
+</div>

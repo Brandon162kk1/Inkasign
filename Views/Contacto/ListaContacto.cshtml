@@ -1,0 +1,58 @@
+@model IEnumerable<Inkasign.Models.Contacto>
+
+@{
+    ViewData["Title"] = "LISTAR";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <section id="hero" class="d-flex align-items-center justify-content-center" style="height: 10px;">
+<h1 >COMENTARIOS</h1>
+
+    </section>
+<br>
+<br>
+    <div class="container" >
+        <div id="contenedor-tabla" class="table-responsive-md">
+            <table class="table table-striped " style="font-size: 18px;">
+                <thead class="thead-dark">
+        <tr>
+            <th>
+                NOMBRE
+            </th>
+            <th>
+                CORREO
+            </th>
+            <th>
+                ASUNTO
+            </th>
+            <th>
+                COMENTARIO
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+
+                <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger" style="font-size: 15px;" onclick="return confirm('¿Desea eliminar el mensaje?')">ELIMINAR</a>
+            
+            </td>
+        </tr>
+}
+       </tbody>
+            </table>
+        </div>
+    </div>

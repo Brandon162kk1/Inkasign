@@ -1,0 +1,39 @@
+@model Inkasign.Models.Proforma
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<center><h1>Editar Cantidad del Producto</h1>
+
+<h4>Por medio, como cliente tendrás acceso a modificar la cantidad de tus productos del carrito de compras</h4>
+<hr />
+<center>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Proforma" asp-action="Edit" id=formulario>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UserID" />
+            <input type="hidden" asp-for="Precio" />
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar Cambios" class="btn btn-light" style="background-color: #AB291D; color:white;" />
+            </div>
+        </form>
+    </div>
+</div></center>
+</center>
+
+<div>
+
+    <a asp-action="Index">Volver atrás</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+} 
