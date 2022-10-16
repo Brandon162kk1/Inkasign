@@ -33,7 +33,7 @@ namespace Inkasign.Controllers
             
             _context.Add(contacto);
             _context.SaveChanges();
-            return View("Confirmacion");
+            return View("Contacto");//confirmacion
         }
 
         [Authorize(Roles = "Admin")]
