@@ -1,26 +1,33 @@
 @model Inkasign.Models.Contacto
 
 @{
-    ViewData["Title"] = "Contáctanos";
+    ViewData["Title"] = "Contáctanos"; 
+    
 }
 <section>
 <fieldset> 
 <div>
-    <form asp-controller="Contacto"  id="formulario">
-        <h3 class="text-center" >@ViewData["Title"]</h3>
+   
+    <!--<img class="d-block mx-auto mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">-->
+    <h1 class="display-6 fw-bold text-center"></h1>
+    <div class="col-lg-6 mx-auto">
+        
+
+    <form asp-controller="Contacto"  id="formulario"> 
+        <h3 class="text-center"; >@ViewData["Title"] <p>&#128222;</p> </h3> 
 
         <label asp-for="Name" class="form-label">Nombre:</label>
-        <input asp-for="Name" class="form-control form-control-sm" type="text" placeholder="Ingresa tu nombre" aria-label=".form-control-sm" required/>
+        <input asp-for="Name" class="form-control form-control-sm" type="text" placeholder="Ingrese su nombre" aria-label=".form-control-sm" required/>
 
         <label asp-for="Email" class="control-label">Correo Electrónico:</label>
-        <input asp-for="Email" class="form-control" placeholder="Ingresa tu email" required/>
+        <input asp-for="Email" class="form-control" placeholder="Ingrese su email" required/>
 
 
         <label asp-for="Subject" class="control-label">Asunto:</label>
-        <input asp-for="Subject" class="form-control" placeholder="Ingresa el asunto del mensaje" required/>
+        <input asp-for="Subject" class="form-control" placeholder="Ingrese el asunto del mensaje" required/>
 
         <label asp-for="Comment" class="control-label">Comentario:</label>
-        <textarea asp-for="Comment" class="form-control" placeholder="Ingresa tu comentario" required></textarea>
+        <textarea asp-for="Comment" class="form-control" placeholder="Ingrese su comentario" required></textarea>
         <br>
         <center><div class="form-group">
             <button type="submit" class="btn btn-light" style="background-color:#AB291D; color:white;">Enviar</button> 
