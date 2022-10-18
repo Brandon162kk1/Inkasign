@@ -15,12 +15,12 @@ html {
 
 body {
   margin-bottom: 0px;
-  background-color: MintCream;
+  background-color: rgba(230, 223, 165, 0.76);
 }
  
 
 .general_home{
-  background: MintCream;
+  background: rgba(223, 203, 160, 0.938)
 }
 
 #img1 {
