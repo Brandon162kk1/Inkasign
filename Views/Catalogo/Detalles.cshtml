@@ -4,26 +4,35 @@
     ViewData["Title"] = "Detalles del Producto";
 }
 
-
-    <h1>Detalles</h1>
-    <div class="container">
-            <div class="col-sm-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-img-actions">
-                    <center><img class="img-responsive" width="150" height="200"
-                       src="/images/@Html.DisplayFor(model => model.ImageName)" alt="@Html.DisplayFor(model => model.ImageName)"  /></center>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
-                  <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
-                  <p class="card-text">Estado:  </h5>@Html.DisplayFor(model => model.Status)</p>
-                  <h5 class="card-title">S/. @Html.DisplayFor(model => model.Precio)</h5>
-                  <center><a class="btn btn-light" asp-controller="Catalogo" asp-action="Agregar" asp-route-id="Id" style="background-color: #AB291D; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px"> Agregar</a></center>
-                </div>
-              </div>
+<h1><marquee>@ViewData["Title"]</marquee></h1>  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="card" style="border-radius: 20px; height: 420px;">
+          <div class="card-body" style="margin: auto auto;">
+            <div class="card-img-actions">
+              <img class="img-responsive" width="375" height="375"
+                src="/Images/@Html.DisplayFor(model => model.ImageName)"
+                alt="@Html.DisplayFor(model => model.ImageName)" style="border-radius: 20px;" />
             </div>
-
-            <a class="btn btn-light" asp-action="Index" style="background-color:#AB701D; color:white;"> < Volver al catálogo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="card" style="border-radius: 20px; padding: 1rem 1rem; height: 420px;">
+          <div class="card-body">
+            <h1 class="card-title">@Html.DisplayFor(model => model.Name)</h1>
+            <h5>Descripción:</h5>
+            <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
+            <h5>Precio:</h5>
+            <p class="card-title">S/@Html.DisplayFor(model => model.Precio)</p>
+            <h5>Estado: @Html.DisplayFor(model => model.Status)</h5><br>
+            <center>
+            <a class="btn btn-info" asp-action="Index" style="background-color:blue; color:white;"> <- Volver al catálogo</a>
+            <a class="btn btn-primary" asp-controller="Catalogo" asp-action="Agregar" asp-route-id="Id" style="background-color: red; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px">Añadir</a>
+            </center>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
