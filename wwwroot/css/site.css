@@ -8,6 +8,7 @@ html {
   }
 }
 
+
 html {
   position: relative;
   min-height: 100%;
@@ -20,7 +21,11 @@ body {
  
 
 .general_home{
+<<<<<<< HEAD
   background: rgba(223, 203, 160, 0.938)
+=======
+  background: rgba(223, 203, 160, 0.938);
+>>>>>>> 2c8ac8f91af1d7d6292455450533b44df3b352da
 }
 
 #img1 {
