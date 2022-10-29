@@ -28,7 +28,7 @@
 .sidebar-brand {
     height: 90px;
     padding: 1rem 0rem 1rem 2rem;
-    color: #fff;
+    background-color:rgba(223, 203, 165, 0.938);
 }
 
 .sidebar-brand span {
@@ -49,12 +49,12 @@
 .sidebar-menu a {
     padding-left: 1rem;
     display: block;
-    color: #fff;
+    background-color:rgba(223, 203, 165, 0.938);
     font-size: 1.1rem;
 }
 
 .sidebar-menu a.active {
-    background: #fff;
+    background-color:rgba(223, 203, 165, 0.938);
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: var(--main-color);
