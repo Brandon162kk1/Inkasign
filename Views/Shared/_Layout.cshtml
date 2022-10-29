@@ -33,6 +33,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Contacto">Contáctanos</a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <form action="/Catalogo" method="post">
+                        <div class="form-outline">
+                        <input type="text" id="searchString" class="form-control" placeholder="Buscar" aria-label="searchString" name="searchString"/>
+                        </div>
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Ml81b6msuNDr_eZuWXYtuq39Uo5EE6nxJhT2OLQ2lptNPNfenU_SxI0m6fpXOjdUXPSYsKtG0iETwEdrjNuhzC6B1HoTukXyrP6VsiOmc7Iv_qzDvt3n7Oo4ych-59R6Bbwji-xGui8P66x7uNULzU" /></form>
+                        </li>
+                    </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
