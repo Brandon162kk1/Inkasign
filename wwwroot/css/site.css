@@ -19,15 +19,6 @@ body {
   background-color: rgba(230, 223, 165, 0.76);
 }
  
-
-.general_home{
-<<<<<<< HEAD
-  background: rgba(223, 203, 160, 0.938)
-=======
-  background: rgba(223, 203, 160, 0.938);
->>>>>>> 2c8ac8f91af1d7d6292455450533b44df3b352da
-}
-
 #img1 {
   border-radius: 10%;
   width: 350px;
@@ -38,10 +29,6 @@ body {
   float: right;
 }
 
-
-
-
-
 @import url(https://fonts.googleapis.com/css?family=Roboto:400);
 #formulario{
   padding: 60px;
@@ -49,7 +36,6 @@ body {
   background-color: #E7E7E7;
   margin: 0 auto;
 }
-
 
 #formulario input, #formulario textarea{
   margin-bottom: 15px;
@@ -63,7 +49,6 @@ body {
 }
 
 textarea {  resize: none;}
-
 
 #portfolio {
   background: #fff;
@@ -129,17 +114,12 @@ textarea {  resize: none;}
   transform: translate3d(0, 0, 0);
 }
 
-    
-
-
-
 .formulario{
   padding: 60px;
   max-width: 400px;
   background-color: #E7E7E7;
   margin: 0 auto;
 }
-
 
 .formulario input, .formulario textarea{
   margin-bottom: 15px;
