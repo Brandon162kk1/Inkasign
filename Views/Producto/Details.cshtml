@@ -1,12 +1,11 @@
 @model Inkasign.Models.Producto
 
 @{
-    ViewData["Title"] = "Detalles del Producto";
+    ViewData["Title"] = "Detalles del Producto Inkasign";
 }
 
-
-    <center><h1>Detalles del Producto Inkasign</h1>
-    <div class="container">
+<h1><center>@ViewData["Title"]</center></h1>
+<center><div class="container">
             <div class="col-sm-4">
               <div class="card mb-3">
                 <div class="card-body">
@@ -18,17 +17,16 @@
                 <div class="card-body">
                   <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
                   <p class="card-text">@Html.DisplayFor(model => model.Descripcion)</p>
-                  <h5 class="card-title">S/. @Html.DisplayFor(model => model.Precio)</h5>
+                  <h5 class="card-title">Precio: S/ @Html.DisplayFor(model => model.Precio)</h5>
                   <br>
-                  <h5 class="card-text">Estado:</h5>@Html.DisplayFor(model => model.Status)</h5>
+                  <h5 class="card-text">Estado: @Html.DisplayFor(model => model.Status)</h5>
+                  <div class="d-grid gap-2">
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos del Producto</a> 
+        <a class="btn btn-danger" asp-action="Index"> Volver a la Lista de Productos </a>
+                  </div>
                 </div>
               </div>
             </div>
-
-    <div>
-    </center>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar Datos del Producto</a> 
-    <br>
-    <a asp-action="Index"> Volver a la Lista de Productos </a>
+    <div></center>
 </div>    
 </div>

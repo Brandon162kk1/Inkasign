@@ -1,7 +1,7 @@
 @model List<Inkasign.Models.Pedido>
 
 @{
-    ViewData["Title"] = "Lista de pedidos";
+    ViewData["Title"] = "Lista de pagos de Inkasign Outlet";
 }
 
 @if(Model.Count == 0){
@@ -10,6 +10,24 @@
       <a asp-controller="Pedido" asp-action="BuscarPedidos" class="btn btn-primary">Ingresar otra consulta</a>
     </div> 
 }else{
+<h1><center>@ViewData["Title"]</center></h1>
+<form  asp-action="ListarPedidos" method="GET" class="row g-3">
+  <div class="col-auto">
+    <label>Usuario:</label>
+    <input type="email" class="form-control" name="usuario" placeholder="example@gmail.com">
+  </div>
+  <div class="col-auto">
+    <label>Fecha Inicio:</label>
+    <input type="date" class="form-control" name="fechaInicio" placeholder="">
+  </div>
+  <div class="col-auto">
+    <label>Fecha Fin:</label>
+    <input type="date" class="form-control" name="fechaFin" placeholder="">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-danger">Buscar Pago</button>
+  </div>
+</form>
 
 <div id="contenedor-tabla" class="table-responsive-md">
     <table class="table table-striped " style="font-size: 18px;">
@@ -30,7 +48,7 @@
             <th>
                 DOCUMENTO
             </th>
-            <th></th>
+            <th>OPCIONES</th>
         </tr>
     </thead>
     <tbody>
@@ -38,10 +56,6 @@
         <tr>
             <td>
                 @item.UserID
-            </td>
-
-            <td>
-                @item.
             </td>
             <td>
                 S/. @item.Total

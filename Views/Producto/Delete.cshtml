@@ -1,15 +1,13 @@
 @model Inkasign.Models.Producto
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar Producto";
 }
 
-<h1>Eliminar Producto</h1>
-
+<h1>@ViewData["Title"]</h1>
 <h3>Está seguro de eliminar el producto del cátalogo</h3>
 <div>
-   
-    <hr />
+    <hr/>
     <dl class="row">
         <dt class = "col-sm-2">
             Nombre del Producto
@@ -46,14 +44,11 @@
             @Html.DisplayFor(model => model.Status)
         </dd>
     </dl>
-    
-
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Eliminar Producto" class="btn btn-danger" />
         <br>
         <br>
-        <a asp-action="Index">Volver a la Lista de Productos</a>
-       
+        <a class="btn btn-info"asp-action="Index">Volver a la Lista de Productos</a>
     </form>
 </div>
