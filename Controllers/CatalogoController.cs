@@ -59,27 +59,15 @@ namespace Inkasign.Controllers
                 ViewData["Message"] = "Por favor, debe loguearse antes de agregar un producto";
                 return RedirectToAction("Index");
             }else{
-                var producto = _context.DataProductos.Find(id);
-                Proforma proforma;
-                
-                Proforma itemProforma = _context.DataProforma.FirstOrDefault(p => p.UserID.Equals(userID) && p.Producto == producto && p.Status.Equals("Pendiente"));
-
-                if(itemProforma == null){
-                    
-                    proforma = new Proforma();
-                    proforma.Producto = producto;
-                    proforma.Precio = producto.Precio;
-                    proforma.Cantidad = 1;
-                    proforma.UserID = userID;
-                    _context.Add(proforma);
-                    
-                }else{
-                    itemProforma.Cantidad++;
-                    _context.Update(itemProforma);
-                }
-                
+                var producto = await _context.DataProductos.FindAsync(id);
+                Proforma proforma = new Proforma();
+                proforma.Producto = producto;
+                proforma.Precio = producto.Precio; //precio del producto en ese momento
+                proforma.Cantidad = 1;
+                proforma.UserID = userID;
+                _context.Add(proforma);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Proforma");
+                return RedirectToAction(nameof(Index));
             }
         }
        
