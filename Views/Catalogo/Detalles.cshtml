@@ -29,7 +29,7 @@
             <h5>Estado: @Html.DisplayFor(model => model.Status)</h5><br>
             <center>
             <a class="btn btn-info" asp-action="Index" style="background-color:blue; color:white;"> <- Volver al catálogo</a>
-            <a class="btn btn-primary" asp-controller="Catalogo" asp-action="Agregar" asp-route-id="Id" style="background-color: red; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px">Añadir</a>
+            <a class="btn btn-primary" asp-controller="Catalogo" asp-action="Agregar" asp-route-id="@Model.Id" style="background-color: red; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px">Añadir</a>
             </center>
           </div>
         </div>

@@ -52,8 +52,6 @@ namespace Inkasign.Controllers
          public async Task<IActionResult> Agregar( int id)
         {   
           
-           Console.WriteLine(id);
-
             var userID = _userManager.GetUserName(User);
             if(userID == null){
                 ViewData["Message"] = "Por favor, debe loguearse antes de agregar un producto";
