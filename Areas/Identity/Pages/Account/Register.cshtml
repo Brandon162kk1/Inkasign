@@ -2,6 +2,7 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Registrar";
+    <script src="~/js/site.js"></script>
 }
 
 <div class="create mt-5" >
@@ -58,6 +59,8 @@
             tipo.type = 'password';
          }
     }
+
+    
 
     function mostrar2(){
          var tip = document.getElementById("confirm");

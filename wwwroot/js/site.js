@@ -5,3 +5,7 @@
 function agregacion() {  
     alert("Se agregó un nuevo producto a tu carrito");
 }
+
+function register() {  
+    alert("Usted se ha registrado correctamente");
+}
