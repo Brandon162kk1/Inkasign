@@ -1,6 +1,7 @@
 @model IEnumerable<Inkasign.Models.Producto>
 @{
     ViewData["Title"] = "Catálogo Inkasign Outlet";  
+    <script src="~/js/site.js"></script>
 }   
 <center><h1>@ViewData["Title"]</h1></center>
 <br>
@@ -23,7 +24,7 @@
                   <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
                   <p class="card-text">Precio: S/@Html.DisplayFor(modelItem => item.Precio)</p>
                   <center>
-                  <a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id" style="background-color: red; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px"> Añadir</a>
+                  <a onclick="agregacion()" class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id" style="background-color: red; color:white;"><img src="/images/carrito1.png" class="img-fluid" alt="" width="20px" heigh="20px"> Añadir</a>
                   <a class="btn btn-info" asp-action="Detalles" asp-route-id="@item.Id" style="background-color: blue; color:white;">Ver más</a>
                   <center/>
                 </div>
