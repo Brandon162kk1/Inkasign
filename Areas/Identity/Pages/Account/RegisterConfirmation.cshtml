@@ -9,7 +9,7 @@
     if (@Model.DisplayConfirmAccountLink)
     {
 <p>
-    <a id="confirm-link" href="@Model.EmailConfirmationUrl">Haz click para confirmar tu cuenta</a>
+    <a onclick="register()" id="confirm-link" href="@Model.EmailConfirmationUrl">Haz click para confirmar tu cuenta</a>
 </p>
     }
     else
