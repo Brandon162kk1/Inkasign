@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Dynamic;
 using DinkToPdf;
 using DinkToPdf.Contracts;
+using System.IO;
 
 namespace Inkasign.Controllers
 {
