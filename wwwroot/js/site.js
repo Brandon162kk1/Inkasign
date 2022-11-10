@@ -9,3 +9,11 @@ function agregacion() {
 function register() {  
     alert("Usted se ha registrado correctamente");
 }
+
+function mensajepago() {  
+    alert("Se realizo el pago con exito");
+}
+
+function mensajeconsulta() {  
+    alert("Se ha enviado su consulta");
+}

@@ -89,10 +89,8 @@ namespace Inkasign.Controllers
 
 
 
-
-            ViewData["Message"] = "¡PAGO REALIZADO!";
                      
-            return RedirectToAction("Confirmacion");
+            return RedirectToAction("Index");
 
 
         }

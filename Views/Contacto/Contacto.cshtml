@@ -30,7 +30,10 @@
         <textarea asp-for="Comment" class="form-control" placeholder="Ingrese su comentario" required></textarea>
         <br>
         <center><div class="form-group">
-            <button type="submit" class="btn btn-light" style="background-color:#AB291D; color:white;">Enviar</button> 
+            <button type="submit" class="btn btn-light" style="background-color:#AB291D; color:white;" onclick="mensajeconsulta();"
+>Enviar</button> 
+
+
         </div>               
     </form>
     <h1>@ViewData["Message"]</h1>

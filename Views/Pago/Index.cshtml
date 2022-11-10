@@ -110,9 +110,9 @@
                     </div>
                 </div>
                 
-                <button type="submit" class="btn-enviar" id="envio">Enviar</button>
+                <button type="submit" class="btn-enviar" id="envio" onclick="mensajepago();"
+>Enviar</button>
             </form>
-            <h3>@ViewData["Message"]</h3>
         </div>
 	</div>
 
@@ -125,14 +125,7 @@
 
         const btnEnvio = document.querySelector('#envio');
 
-        btnEnvio.addEventListener('click' , () => {
-
-          setTimeout(() => {
-            
-            window.location.href="https://localhost:5001/Pago/Confirmacion";
-
-          } , 3000)
-        })
+        
        
         function mostrar()
         {
