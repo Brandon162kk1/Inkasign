@@ -46,7 +46,7 @@
                 HORA
             </th>
             <th>
-                DOCUMENTO
+                BOLETA
             </th>
             <th>OPCIONES</th>
         </tr>
@@ -66,15 +66,12 @@
             <td>
                 @item.Pago.PaymentDate.ToString("HH:mm")
             </td>
-
             <td>
                  @Html.ActionLink("Descargar", "DownLoadPedidos" , new { id=item.Id })
-
             </td>
             <td>
-
                 <a asp-action="DetallePedido" asp-route-id="@item.Id" class="btn btn-secondary" style="font-size: 15px;">DETALLES</a>
-               
+
             </td>
         </tr>
 }

@@ -53,9 +53,14 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalles</a>
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item"  asp-action="Edit" asp-route-id="@item.Id">Editar</a></li>
+                    <li><a class="dropdown-item" asp-action="Details" asp-route-id="@item.Id">Detalles</a></li>
+                    <li><a class="dropdown-item" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a></li>
+                </ul>
+                </div>
             </td>
         </tr>
 }
